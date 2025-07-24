@@ -2,10 +2,8 @@ const inquirer = require('inquirer').default;
 const optionListRaw = require('../options');
 const checkAndInstall = require('./checkDeps')
 const chalk = require('chalk');
-const ensureSudo = require('./ensureSudo');
 
 async function main() {
-  ensureSudo();
 
   const optionList = optionListRaw.map(option => ({
     ...option,

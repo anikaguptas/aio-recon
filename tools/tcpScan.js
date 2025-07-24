@@ -2,6 +2,7 @@ const { promisify } = require('util');
 const { exec } = require('child_process');
 const run = promisify(exec);
 const inquirer = require('inquirer').default;
+const chalk = require('chalk') 
 
 async function runfn() {
   try {
@@ -20,7 +21,7 @@ async function runfn() {
     console.log( chalk.green(stdout));
     
   } catch (err) {
-    console.error("Error running WHOIS lookup:", err.message);
+    console.error("Error running TCP Scan:", err.message);
   }
 }
 

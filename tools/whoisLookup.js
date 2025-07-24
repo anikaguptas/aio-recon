@@ -2,7 +2,7 @@ const { promisify } = require('util');
 const { exec } = require('child_process');
 const run = promisify(exec);
 const inquirer = require('inquirer').default;
-
+const chalk = require("chalk")
 async function runfn() {
   try {
     const { domain } = await inquirer.prompt([
@@ -17,7 +17,7 @@ async function runfn() {
     console.log(`\n📡 Running WHOIS lookup for: ${domain}...\n`);
     
     const { stdout } = await run(`whois ${domain}`);
-    console.log(stdout);
+    console.log(chalk.green(stdout));
     
   } catch (err) {
     console.error("Error running WHOIS lookup:", err.message);

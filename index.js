@@ -2,8 +2,11 @@
 
 const { main } = require('./utils/main');
 const showBanner = require('./utils/showBanner');
-
+const showWarning = require('./utils/showWarning')
+const ensureSudo = require('./utils/ensureSudo');
+ensureSudo();
 showBanner();
+showWarning();
 
 process.on('SIGINT', () => {
   console.log('\n❌ Exiting via Ctrl+C...');
