@@ -1,26 +1,38 @@
-const { promisify } = require('util');
-const { exec } = require('child_process');
-const run = promisify(exec);
+const { run } = require('../utils/runner');
 const inquirer = require('inquirer').default;
 const chalk = require('chalk');
+
 async function runfn() {
   try {
-    const { domain } = await inquirer.prompt([
+    // Step 1: Explain what UDP Scan does
+    console.clear();
+    console.log(chalk.cyan.bold('\n📡 Understanding UDP Port Scan\n'));
+    console.log(chalk.white(`👉 UDP (User Datagram Protocol) is connectionless — no handshake like TCP.`));
+    console.log(chalk.white(`👉 Nmap sends UDP packets to ports and waits for responses.`));
+    console.log(chalk.white(`   - No response could mean the port is OPEN or FILTERED.`));
+    console.log(chalk.white(`   - "Port unreachable" ICMP message = CLOSED.`));
+    console.log(chalk.yellow(`⚠️  Limitations of UDP Scanning:`));
+    console.log(chalk.yellow(`   - Slow: Each port must wait for a timeout.`));
+    console.log(chalk.yellow(`   - High rate of false negatives (open ports might appear closed).`));
+    console.log(chalk.yellow(`   - Firewalls may silently drop UDP packets.\n`));
+
+    // Step 2: Ask for the target
+    const { target } = await inquirer.prompt([
       {
         type: 'input',
-        name: 'domain',
-        message: 'Enter the domain (e.g., example.com):',
-        validate: input => input.trim() !== '' || 'Domain cannot be empty'
+        name: 'target',
+        message: '🌍 Enter IP or domain to scan for UDP ports:',
+        validate: input => input.trim() !== '' || 'Target cannot be empty',
       }
     ]);
 
-    console.log(`\n📡 Running UDP lookup for: ${domain}...\n`);
-    
-    const { stdout } = await run(`nmap -sU -v ${domain}`);
+    // Step 3: Run the UDP scan
+    console.log(chalk.blue(`\n🔎 Scanning top 1000 UDP ports on ${target} using -sU...\n`));
+    const { stdout } = await run(`nmap -sU ${target}`);
     console.log(chalk.green(stdout));
-    
+
   } catch (err) {
-    console.error("Error running WHOIS lookup:", err.message);
+    console.error(chalk.red(`❌ UDP Port Scan failed: ${err.message}`));
   }
 }
 
