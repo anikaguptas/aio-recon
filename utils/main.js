@@ -15,7 +15,7 @@ async function main() {
           name: 'selectedOption',
           message: 'Use arrow keys to scroll between the options',
           choices: optionList,
-          pageSize : 25
+          pageSize : 50
         }
       ]);
     
