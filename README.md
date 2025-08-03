@@ -1,21 +1,54 @@
-AIO-Recon
-All-in-One Reconnaissance CLI Tool for Cybersecurity Professionals & Learners
 
-AIO-Recon simplifies and speeds up the information-gathering phase by combining multiple reconnaissance tools into a single interactive CLI.
-Whether you're a beginner, student, developer, or professional, AIO-Recon guides you through each task with educational insights and lets you run scans with ease.
+# AIO-Recon
 
-Features
-✅ Interactive CLI with Inquirer prompts
-✅ Tool-by-tool modular structure
-✅ Guided learning before each scan
-✅ Automates recon tasks like:
-Host Discovery
-Port Scanning
-Firewall evasions
-Network topology
-Email Finder
-Whois Lookup
-Subdomain & Email gathering
-Website Fingerprinting
+AIO-Recon is an interactive CLI tool that simplifies and speeds up the information-gathering phase by combining multiple recon tools (like Nmap, Whois, TheHarvester, etc.) in one place. It offers guided prompts, educational insights, and one-click execution making it ideal for beginners, students, developers, and professionals. This project highlights the value of automation and tool integration in strengthening the recon phase of the Cyber Kill Chain.
 
-✅ CLI-based report output
+
+
+
+## Author
+
+- [@Anika Gupta](https://www.github.com/anikaguptas)
+
+
+## Demo
+
+![AIO Recon Screenshot](docs/screenshot.png)
+
+## Deployment
+
+To make AIO-Recon accessible globally from any terminal window:
+
+```bash
+npm i -g aio-recon
+```
+
+Then you can launch the tool from anywhere using:
+
+```bash
+sudo aio-recon
+```
+
+## Installation
+
+You can install AIO-Recon directly using npm:
+
+
+```bash
+npm i aio-recon
+sudo aio-recon
+```
+    
+## Feedback
+
+If you have any feedback, please reach out to us at anikaguptaindia@gmail.com
+
+
+## Contributing
+
+Contributions are always welcome!
+
+
+
+
+##
