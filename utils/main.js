@@ -13,7 +13,7 @@ async function main() {
         {
           type: 'list',
           name: 'selectedOption',
-          message: 'Use arrow keys to scroll between the options',
+          message: ' ',
           choices: optionList,
           pageSize : 50
         }
@@ -21,8 +21,7 @@ async function main() {
     
       const option = optionList.find(t => t.value === selectedOption);
       if (!option) return console.error("❌ option not found.");
-     
-    
+
       await checkAndInstall(option.dependencies);
     
       const toolRunner = require(`../tools/${option.value}.js`);

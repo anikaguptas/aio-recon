@@ -10,10 +10,7 @@ async function showBanner() {
     verticalLayout: 'default',
   });
   console.log(gradient.mind.multiline(title));
-  console.log(chalk.blue(' - Aio-recon is a powerful, modular, and interactive CLI-based cybersecurity reconnaissance toolkit built with Node.js. It allows security analysts, ethical hackers, and OSINT enthusiasts to perform a wide range of recon tasks — all from the terminal — with simple natural-language input.'))
-  console.log(chalk.gray('—'.repeat(process.stdout.columns || 40))); 
-
-
+  console.log(chalk.yellow('Aio-recon is a powerful and interactive CLI-based cybersecurity reconnaissance toolkit built with Node.js. Whether you’re a student, beginner developer or seasoned professional, educate yourself first and then explore and perform recon the right way, all from your terminal.'));
 }
 
 module.exports = showBanner;

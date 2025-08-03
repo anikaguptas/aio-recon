@@ -1,6 +1,6 @@
 {
   "name": "aio-recon",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "All-in-one recon CLI tool for ethical hackers",
   "main": "index.js",
   "bin": {
