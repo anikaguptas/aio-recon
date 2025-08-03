@@ -1,0 +1,37 @@
+{
+  "name": "aio-recon",
+  "version": "1.0.1",
+  "description": "All-in-one recon CLI tool for ethical hackers",
+  "main": "index.js",
+  "bin": {
+    "aio-recon": "./index.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anika",
+  "license": "ISC",
+  "dependencies": {
+    "@clack/prompts": "^0.10.1",
+    "@xenova/transformers": "^2.17.2",
+    "boxen": "^8.0.1",
+    "chalk": "^4.1.2",
+    "chalk-animation": "^2.0.3",
+    "cli-spinners": "^3.2.0",
+    "figlet": "^1.8.0",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^12.8.2",
+    "inquirer-search-list": "^1.2.6",
+    "log-symbols": "^7.0.0",
+    "log-update": "^6.1.0",
+    "nanospinner": "^1.2.2",
+    "node-libnmap": "^0.2.15",
+    "ora": "^8.2.0",
+    "pdfkit": "^0.17.1"
+  },
+  "devDependencies": {
+    "depcheck": "^1.4.7"
+  }
+}
