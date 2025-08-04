@@ -9,7 +9,7 @@ showBanner();
 showWarning();
 
 process.on('SIGINT', () => {
-  console.log('\n❌ Exiting via Ctrl+C...');
+  console.log('\n Exiting via Ctrl+C...');
   process.exit(0);
 });
 
@@ -18,11 +18,11 @@ process.on('SIGINT', () => {
     await main();
   } catch (err) {
     if (err?.constructor?.name === 'ExitPromptError') {
-      console.log('\n❌ Prompt cancelled with Ctrl+C.');
+      console.log('\nPrompt cancelled with Ctrl+C.');
       process.exit(0);
     }
 
-    console.error('❗ Unexpected error:', err);
+    console.error(' Unexpected error:', err);
     process.exit(1);
   }
 })();

@@ -20,11 +20,11 @@ async function main() {
       ]);
     
       const option = optionList.find(t => t.value === selectedOption);
-      if (!option) return console.error("❌ option not found.");
+      if (!option) return console.error(" option not found.");
 
       await checkAndInstall(option.dependencies);
     
-      const toolRunner = require(`../tools/${option.value}.js`);
+      const toolRunner = require(`../tools/${option.category}/${option.value}.js`);
       toolRunner.run();
 }
 module.exports = { main };
